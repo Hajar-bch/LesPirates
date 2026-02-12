@@ -6,6 +6,11 @@ public abstract class Case {
 	public Case(Couleurs couleur) {
 		this.couleurCase = couleur;
 	}
-	
+
+	public abstract void appliquerEffet(Joueur j, Pion p);
+
+	public Couleurs getCouleur() {
+		return couleurCase;
+	}
 
 }

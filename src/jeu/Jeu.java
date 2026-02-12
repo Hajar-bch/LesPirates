@@ -1,7 +1,8 @@
 package jeu;
 
 public class Jeu {
-	private Joueur joueurCourant;
-	private boolean estFinie;
+
+	private Plateau plateau = new Plateau();
+	private Joueur[] joueurs = new Joueur[2];
 
 }
