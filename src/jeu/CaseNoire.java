@@ -7,7 +7,7 @@ public class CaseNoire extends Case {
 
 	@Override
 	public void appliquerEffet(Joueur j, Pion p) {
-		p.reculer(3);
+		p.reculer(3, j.getNom());
 	}
 
 }

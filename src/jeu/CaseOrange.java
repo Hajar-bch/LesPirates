@@ -7,7 +7,7 @@ public class CaseOrange extends Case {
 
 	@Override
 	public void appliquerEffet(Joueur j, Pion p) {
-		p.avancer(2);
+		p.avancer(2, j.getNom());
 	}
 
 }

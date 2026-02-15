@@ -10,8 +10,8 @@ public class Joueur {
 		this.pion = new Pion(couleurPion);
 	}
 
-	public int lancerDes(Dé d1, Dé d2) {
-		return d1.lancerDe() + d2.lancerDe();
+	public int lancerDes() {
+		return 0;
 	}
 
 	public String getNom() {
@@ -20,6 +20,14 @@ public class Joueur {
 
 	public Pion getPion() {
 		return pion;
+	}
+
+	public boolean isBloque() {
+		return this.estBloque;
+	}
+
+	public void setBloque(boolean etat) {
+		this.estBloque = etat;
 	}
 
 }
