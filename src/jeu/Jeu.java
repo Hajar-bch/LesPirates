@@ -18,21 +18,41 @@ public class Jeu {
 	}
 
 	public void jouerTour(Joueur j) {
+		int v1 = d1.lancerDe();
+		int v2 = d2.lancerDe();
+
+		journal.afficherResultatDes(j.getNom(), v1 + v2);
+
+		// caseBloquante
 		if (j.isBloque()) {
-			j.setBloque(false);
-		} else {
-			int score = d1.lancerDe() + d2.lancerDe();
-			journal.afficherResultatDes(j.getNom(), score);
-
-			Pion p = j.getPion();
-			p.avancer(score, j.getNom());
-
-			Case c = plateau.getCase(p.getPosition());
-			if (c != null) {
-				c.appliquerEffet(j, p);
+			if (v1 == v2) {
+				j.setBloque(false);
+				journal.afficherMessage("Double ! " + j.getNom() + " est débloqué");
+			} else {
+				journal.afficherMessage("Pas de double : " + j.getNom() + " reste bloqué");
 			}
-			this.verifierVictoire(j, p);
+			return;
 		}
+
+		// caseDauphin
+		int score = v1 + v2;
+		if (j.aEffetDauphin()) {
+			score = 2 * score;
+			j.decrementerDauphin();
+			journal.afficherMessage("Dauphin: deplacement doublé ! tours restant = " + j.getNbToursDauphin());
+		}
+
+		// avancer
+		Pion p = j.getPion();
+		p.avancer(score, j.getNom());
+
+		// appliqerEffet
+		Case c = plateau.getCase(p.getPosition());
+		if (c != null) {
+			c.appliquerEffet(j, p);
+		}
+
+		this.verifierVictoire(j, p);
 	}
 
 	private void verifierVictoire(Joueur j, Pion p) {

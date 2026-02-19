@@ -1,7 +1,7 @@
 package jeu;
 
-public class CaseRouge extends Case {
-	public CaseRouge() {
+public class CaseBloquante extends Case {
+	public CaseBloquante() {
 		super(Couleurs.ROUGE);
 	}
 
