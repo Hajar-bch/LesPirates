@@ -2,6 +2,7 @@ package jeu;
 
 public class Joueur {
 	private String nom;
+	private int nbCoeurs = 5;
 	private boolean estBloque = false;
 	private Pion pion;
 

@@ -1,7 +1,7 @@
 package jeu;
 
 public enum Couleurs {
-	
-	ROUGE, BLEU, ORANGE, NOIR, NEUTRE;
+
+	ROUGE, BLEU, ORANGE, VERT;
 
 }

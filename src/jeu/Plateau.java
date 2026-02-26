@@ -3,7 +3,7 @@ package jeu;
 public class Plateau {
 
 	private Case[] cases = new Case[31];
-	private int nbCases = 31;
+	private int nbCases = 30;
 
 	public Plateau() {
 		for (int pos = 1; pos <= 30; pos++) {

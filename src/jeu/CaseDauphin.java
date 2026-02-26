@@ -2,7 +2,7 @@ package jeu;
 
 public class CaseDauphin extends Case {
 	public CaseDauphin() {
-		super(Couleurs.ORANGE);
+		super(Couleurs.VERT);
 	}
 
 	@Override

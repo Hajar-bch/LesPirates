@@ -2,7 +2,7 @@ package jeu;
 
 public class CaseBloquante extends Case {
 	public CaseBloquante() {
-		super(Couleurs.ROUGE);
+		super(Couleurs.ORANGE);
 	}
 
 	@Override
