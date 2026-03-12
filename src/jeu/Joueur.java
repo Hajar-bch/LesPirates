@@ -8,6 +8,12 @@ public class Joueur {
 
 	private int nbToursDauphin = 0;
 
+	public void perdreCoeur() {
+		this.nbCoeurs--;
+		if (this.nbCoeurs < 0)
+			this.nbCoeurs = 0;
+	}
+
 	public void activerDauphin(int nbTours) {
 		this.nbToursDauphin = nbTours;
 	}
@@ -41,6 +47,14 @@ public class Joueur {
 
 	public Pion getPion() {
 		return pion;
+	}
+
+	public int getNbCoeurs() {
+		return nbCoeurs;
+	}
+
+	public boolean estMort() {
+		return nbCoeurs <= 0;
 	}
 
 	public boolean isBloque() {

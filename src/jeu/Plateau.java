@@ -7,6 +7,10 @@ public class Plateau {
 
 	public Plateau() {
 		for (int pos = 1; pos <= 30; pos++) {
+			
+			if (pos == 5 || pos == 15 || pos == 20) {
+				cases[pos] = new CaseBombe();
+			}
 
 			if (pos == 11 || pos == 23) {
 				cases[pos] = new CaseBloquante();
