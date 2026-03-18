@@ -6,7 +6,7 @@ public class Jeu {
 	private IAffichage journal;
 	private Plateau plateau = new Plateau();
 	private Joueur[] joueurs = new Joueur[2];
-	private Dé d1, d2;
+	private De d1, d2;
 	private boolean estFini = false;
 
 	private Scanner lecteur = new Scanner(System.in);
@@ -17,8 +17,8 @@ public class Jeu {
 
 	public Jeu(IAffichage journal) {
 		this.journal = journal;
-		this.d1 = new Dé(6);
-		this.d2 = new Dé(6);
+		this.d1 = new De(6);
+		this.d2 = new De(6);
 	}
 
 	public void jouerTour(Joueur joueurCourant) {

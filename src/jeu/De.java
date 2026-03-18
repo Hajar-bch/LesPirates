@@ -2,11 +2,11 @@ package jeu;
 
 import java.util.Random;
 
-public class Dé {
+public class De {
 	private int valeurMax = 6;
 	private Random random = new Random();
 
-	public Dé(int valeurMax) {
+	public De(int valeurMax) {
 		this.valeurMax = valeurMax;
 	}
 
