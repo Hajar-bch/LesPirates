@@ -70,10 +70,10 @@ public class Jeu {
 
 	}
 
-	private void verifierVictoire(Joueur j, Pion p) {
+	private void verifierVictoire(Joueur joueurCourant, Pion p) {
 		if (p.getPosition() == 30) {
 			this.estFini = true;
-			journal.afficherVictoire(j.getNom());
+			journal.afficherVictoire(joueurCourant.getNom());
 		}
 	}
 

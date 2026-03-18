@@ -6,8 +6,8 @@ public class CaseBloquante extends Case {
 	}
 
 	@Override
-	public void appliquerEffet(Joueur j, Pion p) {
-		j.setBloque(true);
-		System.out.println("Le pirate " + j.getNom() + " est bloqué");
+	public void appliquerEffet(Joueur joueurCourant, Pion p) {
+		joueurCourant.setBloque(true);
+		System.out.println("Le pirate " + joueurCourant.getNom() + " est bloqué");
 	}
 }

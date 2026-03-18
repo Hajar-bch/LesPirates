@@ -6,8 +6,8 @@ public class CaseDauphin extends Case {
 	}
 
 	@Override
-	public void appliquerEffet(Joueur j, Pion p) {
-		j.activerDauphin(3);
+	public void appliquerEffet(Joueur joueurCourant, Pion p) {
+		joueurCourant.activerDauphin(3);
 		System.out.println("Effet Dauphin est activé pour 3 tours ");
 	}
 
