@@ -11,10 +11,6 @@ public class Jeu {
 
 	private Scanner lecteur = new Scanner(System.in);
 
-	public boolean estFini() {
-		return this.estFini;
-	}
-
 	public Jeu(IAffichage journal) {
 		this.journal = journal;
 		this.d1 = new De(6);
@@ -27,14 +23,12 @@ public class Jeu {
 		int v2 = d2.lancerDe();
 
 		journal.afficherResultatDes(joueurCourant.getNom(), v1 + v2);
-		
-		//caseBombe
+
 		if (joueurCourant.estMort()) {
 			this.estFini = true;
-			journal.afficherMessage("Game Over " + joueurCourant.getNom() + "n'a plus de coeurs" );
+			journal.afficherMessage("Game Over " + joueurCourant.getNom() + "n'a plus de coeurs");
 		}
 
-		// caseBloquante
 		if (joueurCourant.isBloque()) {
 			if (v1 == v2) {
 				joueurCourant.setBloque(false);
@@ -47,7 +41,6 @@ public class Jeu {
 			return;
 		}
 
-		// caseDauphin
 		int score = v1 + v2;
 		if (joueurCourant.aEffetDauphin()) {
 			score = 2 * score;
@@ -56,18 +49,15 @@ public class Jeu {
 					"Dauphin: deplacement doublé ! tours restant = " + joueurCourant.getNbToursDauphin());
 		}
 
-		// avancer
 		Pion p = joueurCourant.getPion();
 		p.avancer(score, joueurCourant.getNom());
 
-		// appliqerEffet
 		Case c = plateau.getCase(p.getPosition());
 		if (c != null) {
 			c.appliquerEffet(joueurCourant, p);
 		}
 
 		this.verifierVictoire(joueurCourant, p);
-
 	}
 
 	private void verifierVictoire(Joueur joueurCourant, Pion p) {
@@ -75,6 +65,10 @@ public class Jeu {
 			this.estFini = true;
 			journal.afficherVictoire(joueurCourant.getNom());
 		}
+	}
+	
+	public boolean estFini() {
+		return this.estFini;
 	}
 
 }
